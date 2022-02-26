@@ -7,10 +7,15 @@
 const float SCREEN_W = 600;
 const float SCREEN_H = 600;
 
-class Word
+class Paragraph
 {
 public:
    std::vector<std::string> allWords;
-   std::vector<char> wordChars;
-   Word(std::string word) : allWords{word} {};
+   
+   class Word
+   {
+      std::vector<char> wordChars;
+      Word(std::string word) : Paragraph::allWords{word} {};
+   };
+
 };
