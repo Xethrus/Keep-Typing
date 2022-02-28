@@ -19,7 +19,7 @@ class Word
       } else { return false; }
    }
 
-   void iterateWord(Word currentWord)
+   void iterateWord(Word currentWord, std::vector<Word> paragraph)
    {
       for(int i = 0; i == currentWord.wordChars.length(); i++)
       {
@@ -29,6 +29,15 @@ class Word
          } else { std::cout << " Wrong key ";}
       }
    }
+   void iterateParagraph(std::vector<Word> paragraph)
+   {
+      for(const auto& p : paragraph)
+      {
+         iterateWord(p, paragraph);
+      }
+   }
+
+
 };
 
 int main(void)
