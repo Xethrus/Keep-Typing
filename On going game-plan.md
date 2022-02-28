@@ -11,3 +11,9 @@ Ideas
 2: Vector of Words
       I use class Word to store chars of the "Word" then I just have a vector of words. Similar to
       the idea above but less complicated. 
+      
+            2.1: This is still the most promising idea; I am worried about the functionality of the visual
+            system. I think the point is that I will be drawing each word and then editing the drawings of
+            those words to show correct or incorrect typing. It is important that I make the user type the
+            letter correct before continuing. This means making them have to delete what is typed and retype
+            the failed char.
