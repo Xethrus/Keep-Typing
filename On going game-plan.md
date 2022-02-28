@@ -17,3 +17,20 @@ Ideas
             those words to show correct or incorrect typing. It is important that I make the user type the
             letter correct before continuing. This means making them have to delete what is typed and retype
             the failed char.
+3: Step by Step
+      Trying to figure out my plan of attack here step by step. 
+      
+           1. Assign a bunch of words to my vector of class Word
+           
+           2. Make some sort of cursor/position that moves through
+           the characters(indexing) of the class Word member string
+           "wordChars" 
+                  2.1: I have to make it display the movement through
+                  words that are printed onto a graphic screen. To start
+                  I need to make it so that every time a key is pressed
+                  a character is colored green. Demarcating that it has been
+                  typed. 
+           
+           3. Restrain the movement by making conditionals that check
+           if you have pressed the current index. Making it so you have
+           to "delete" the key you mispressed.
