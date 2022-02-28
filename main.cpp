@@ -10,6 +10,7 @@ const float SCREEN_H = 600;
 class Word
 {
    std::string wordChars;
+   
    bool isPressed(char pressedKey, char currentIndex)
    {
       if(IsKeyPressed(pressedKey) == currentIndex)
@@ -17,6 +18,7 @@ class Word
          return true;
       } else { return false; }
    }
+
    void iterateWord(Word currentWord)
    {
       for(int i = 0; i == currentWord.wordChars.length(); i++)
