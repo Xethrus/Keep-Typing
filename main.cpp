@@ -21,7 +21,10 @@ class Word
    {
       for(int i = 0; i == currentWord.wordChars.length(); i++)
       {
-         isPressed(GetKeyPressed(), i);
+         if( isPressed(GetKeyPressed(), i) == true)
+         {
+            //make the key pressed green
+         } else { std::cout << " Wrong key ";}
       }
    }
 };
