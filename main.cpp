@@ -36,6 +36,10 @@ class Word
          iterateWord(p, paragraph);
       }
    }
+   void printWordOnScreen(std::vector<Word> &paragraph)
+   (
+      DrawText(paragraph.wordChars)
+   )
 
 
 };
