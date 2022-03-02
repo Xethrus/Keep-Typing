@@ -33,4 +33,5 @@ Ideas
            
            3. Restrain the movement by making conditionals that check
            if you have pressed the current index. Making it so you have
-           to "delete" the key you mispressed.
+           to "delete" the key you mispressed. Other bug waryness will be
+           required of course. 
