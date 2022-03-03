@@ -15,14 +15,6 @@ public:
       currentIndex ++;
       return(iteratedWord.wordChars[currentIndex]);
    }
-   
-   void iterateParagraph(std::vector<Word> paragraph)
-   {
-      for(const auto& p : paragraph)
-      {
-         (p, paragraph);
-      }
-   }
    bool typedChar(Word iterateWord, int &currentIndex)//checks if current index char was typed
    {
       if(GetKeyPressed() == iterateWord.wordChars[currentIndex])
@@ -34,10 +26,9 @@ public:
       return false;
    }
 
-   void typeWord(Word iterateWord, std::vector<Word> paragraph) //this is messy lol - Check to see if you type the whole word
+   void typeWord(Word iterateWord) //this is messy lol - Check to see if you type the whole word
    {
       int index = 0;
-      int paragraphIndex = 0;
       int currentWordLength;
       currentWordLength = iterateWord.wordChars.length();
       iterateWord.wordChars[index];
@@ -47,10 +38,14 @@ public:
          {
             index ++;
          }
-      std::cout << "there was a miss input" << std::endl;
+         std::cout << "there was a miss input" << std::endl;
       }
-      paragraphIndex++;
-      paragraph[paragraphIndex];
-
+   }
+   void iterateParagraph(std::vector<Word> paragraph)
+   {
+      for(const auto& p : paragraph)
+      {
+         typeWord(p.wordChars);
+      }
    }
 };
