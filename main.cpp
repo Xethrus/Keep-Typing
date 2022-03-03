@@ -6,49 +6,51 @@
 
 const float SCREEN_W = 600;
 const float SCREEN_H = 600;
-float HALFS1 = SCREEN_W/2;
-float HALFS2 = SCREEN_H/2;
-const Vector2 MIDPOINT = (HALFS1,HALFS2); //learing to define VEctor2 important
 
-class Word
-{
-   std::string wordChars;
+class Word{
+public:
+   std::string wordChars; //the literal word in class "Word"
+
+   char iterateString(Word iteratedWord, int currentIndex){ //return the char at the next index- needed for text output
+      currentIndex ++;
+      return(iteratedWord.wordChars[currentIndex]);
+   }
    
-   bool isPressed(char pressedKey, char currentIndex)
-   {
-      if(IsKeyPressed(pressedKey) == currentIndex)
-      {
-         return true;
-      } else { return false; }
-   }
-
-   void iterateWord(Word currentWord, std::vector<Word> paragraph)
-   {
-      for(int i = 0; i == currentWord.wordChars.length(); i++)
-      {
-         if( isPressed(GetKeyPressed(), i) == true)
-         {
-            //make the key pressed green
-         } else { std::cout << " Wrong key ";}
-      }
-   }
    void iterateParagraph(std::vector<Word> paragraph)
    {
       for(const auto& p : paragraph)
       {
-         iterateWord(p, paragraph);
+         (p, paragraph);
       }
    }
-   void printWordOnScreen(Word currentWord, std::vector<Word> &paragraph)
-   (
-      DrawText(currentWord.wordChars, 150, 150, 50, BLACK); 
-   )
+   bool typedChar(Word iterateWord, int &currentIndex)//checks if current index char was typed
+   {
+      if(GetKeyPressed() == iterateWord.wordChars[currentIndex])
+      {
+         return true;
+         //iterateString(iterateWord, currentIndex)
+         currentIndex ++;
+      }
+      return false;
+   }
 
+   void typeWord(Word iterateWord, std::vector<Word> paragraph) //this is messy lol - Check to see if you type the whole word
+   {
+      int index = 0;
+      int paragraphIndex = 0;
+      int currentWordLength;
+      currentWordLength = iterateWord.wordChars.length();
+      iterateWord.wordChars[index];
+      while(index < currentWordLength-1)
+      {
+         if(typedChar(iterateWord,index) == true)
+         {
+            index ++;
+         }
+      std::cout << "there was a miss input" << std::endl;
+      }
+      paragraphIndex++;
+      paragraph[paragraphIndex];
 
+   }
 };
-
-int main(void)
-{
-   std::vector<Word> paragraph;
-   return 0;
-}
