@@ -6,6 +6,9 @@
 
 const float SCREEN_W = 600;
 const float SCREEN_H = 600;
+float HALFS1 = SCREEN_W/2;
+float HALFS2 = SCREEN_H/2;
+const Vector2 MIDPOINT = (HALFS1,HALFS2); //learing to define VEctor2 important
 
 class Word
 {
@@ -36,9 +39,9 @@ class Word
          iterateWord(p, paragraph);
       }
    }
-   void printWordOnScreen(std::vector<Word> &paragraph)
+   void printWordOnScreen(Word currentWord, std::vector<Word> &paragraph)
    (
-      DrawText(paragraph.wordChars)
+      DrawText(currentWord.wordChars, 150, 150, 50, BLACK); 
    )
 
 
