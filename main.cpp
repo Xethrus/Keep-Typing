@@ -2,7 +2,8 @@
 #include <iostream>
 #include <vector>
 #include <string>
-
+#include <chrono>
+#include <thread>
 
 const float SCREEN_W = 600;
 const float SCREEN_H = 600;
@@ -10,42 +11,54 @@ const float SCREEN_H = 600;
 class Word{
 public:
    std::string wordChars; //the literal word in class "Word"
+   char currentChar;
+   int currentWordIndex = 0;
+   int paragraphIndex = 0;
 
-   char iterateString(Word iteratedWord, int currentIndex){ //return the char at the next index- needed for text output
-      currentIndex ++;
-      return(iteratedWord.wordChars[currentIndex]);
-   }
-   bool typedChar(Word iterateWord, int &currentIndex)//checks if current index char was typed
+   Word(std::string word) : wordChars{word} {};
+
+
+   void checkIfOverLimit(Word iterateWord)
    {
-      if(GetKeyPressed() == iterateWord.wordChars[currentIndex])
+      if(iterateWord.wordChars[currentWordIndex] ++ > iterateWord.wordChars.length())
+      {
+         paragraphIndex++;
+      }
+   }
+   bool typedChar(Word iterateWord)//checks if current index char was typed
+   {  
+      checkIfOverLimit(iterateWord);
+      if(GetKeyPressed() == iterateWord.wordChars[currentWordIndex])
       {
          return true;
-         //iterateString(iterateWord, currentIndex)
-         currentIndex ++;
+         currentWordIndex ++;
       }
       return false;
    }
+   // void iterateParagraph(std::vector<Word> paragraph)
+   // {
+   //    for(auto item: paragraph){
+      
+   //    }
+   // }
+};
 
-   void typeWord(Word iterateWord) //this is messy lol - Check to see if you type the whole word
+int main(void){
+   
+   //Initialization
+   //--------------------------------------------------------------------------
+   std::vector<Word> paragraph;
+   Word word ("string");
+   InitWindow((int)SCREEN_W, (int)SCREEN_H, "testing window");
+   int test = 0;
+
+
+   //Main loop
+   while (!WindowShouldClose())
    {
-      int index = 0;
-      int currentWordLength;
-      currentWordLength = iterateWord.wordChars.length();
-      iterateWord.wordChars[index];
-      while(index < currentWordLength-1)
-      {
-         if(typedChar(iterateWord,index) == true)
-         {
-            index ++;
-         }
-         std::cout << "there was a miss input" << std::endl;
-      }
-   }
-   void iterateParagraph(std::vector<Word> paragraph)
-   {
-      for(const auto& p : paragraph)
-      {
-         typeWord(p.wordChars);
-      }
+      std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+      test ++;
+      std::cout << test << std::endl;
+
    }
 };
