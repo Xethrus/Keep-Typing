@@ -35,3 +35,9 @@ Ideas
            if you have pressed the current index. Making it so you have
            to "delete" the key you mispressed. Other bug waryness will be
            required of course. 
+4. Realizations
+            
+            
+            I need to keep in mind the update loop. Forgetting the nature of the repeating loops has lead me down
+            many paths that I did not need to walk. Now I need to figure out how to properly iterate through the
+            words after they have been typed. Lots of ideological progress so far. 
