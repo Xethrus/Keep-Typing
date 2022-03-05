@@ -17,7 +17,11 @@ public:
 
    Word(std::string word) : wordChars{word} {};
 
-
+   Word checkPIndex(std::vector<Word> paragraph)
+   {
+      return paragraph[paragraphIndex];
+   }
+   
    void checkIfOverLimit(Word iterateWord)
    {
       if(iterateWord.wordChars[currentWordIndex] ++ > iterateWord.wordChars.length())
@@ -35,12 +39,12 @@ public:
       }
       return false;
    }
-   // void iterateParagraph(std::vector<Word> paragraph)
-   // {
-   //    for(auto item: paragraph){
+   void iterateParagraph(std::vector<Word> paragraph)
+   {
+      for(auto item: paragraph){
       
-   //    }
-   // }
+      }
+   }
 };
 
 int main(void){
@@ -48,7 +52,12 @@ int main(void){
    //Initialization
    //--------------------------------------------------------------------------
    std::vector<Word> paragraph;
-   Word word ("string");
+   Word word1 = "wordOne";
+   Word word2 = "wordTwo";
+   Word word3 = "wordThree";
+   paragraph.push_back(word1);
+   paragraph.push_back(word2);
+   paragraph.push_back(word3);
    InitWindow((int)SCREEN_W, (int)SCREEN_H, "testing window");
    int test = 0;
 
@@ -59,6 +68,8 @@ int main(void){
       std::this_thread::sleep_for(std::chrono::milliseconds(1000));
       test ++;
       std::cout << test << std::endl;
+      //update
+      typedChar(checkPIndex(paragraph));
 
    }
 };
