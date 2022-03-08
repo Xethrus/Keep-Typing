@@ -46,6 +46,10 @@ public:
       }
    }
 };
+class Paragraph{
+   std::vector<Word> paragraph;
+   Paragraph(std::vector<Word> words) : paragraph{words} {};
+};
 
 int main(void){
    
