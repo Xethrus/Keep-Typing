@@ -17,9 +17,9 @@ public:
 
    Word(std::string word) : wordChars{word} {};
 
-   Word checkPIndex(std::vector<Word> paragraph)
+   int getPIndex()
    {
-      return paragraph[paragraphIndex];
+      return paragraphIndex;
    }
    
    void checkIfOverLimit(Word iterateWord)
@@ -29,10 +29,10 @@ public:
          paragraphIndex++;
       }
    }
-   bool typedChar(Word iterateWord)//checks if current index char was typed
+   bool typedChar(std::vector <Word> paragraph)//checks if current index char was typed
    {  
-      checkIfOverLimit(iterateWord);
-      if(GetKeyPressed() == iterateWord.wordChars[currentWordIndex])
+      checkIfOverLimit(paragraph[paragraphIndex]);
+      if(GetKeyPressed() == paragraph[paragraphIndex].wordChars[currentWordIndex])
       {
          return true;
          currentWordIndex ++;
@@ -65,11 +65,11 @@ int main(void){
    //Main loop
    while (!WindowShouldClose())
    {
-//       std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-//       test ++;
-//       std::cout << test << std::endl;
+      std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+      test ++;
+      std::cout << test << std::endl;
       //update
-      typedChar(checkPIndex(paragraph));
+      word1.typedChar(paragraph);
 
    }
 };
