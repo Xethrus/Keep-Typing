@@ -47,15 +47,17 @@ public:
    }
 };
 class Paragraph{
-   std::vector<Word> paragraph;
-   Paragraph(std::vector<Word> words) : paragraph{words} {};
+   std::vector<Word> create_copy(std::vector<Word> const &vec)
+   {
+      std::vector<Word> v(vec.begin(), vec.end());
+      return v;
+   }
 };
 
 int main(void){
    
    //Initialization
    //--------------------------------------------------------------------------
-   std::vector<Word> paragraph;
    Word word1 = "wordOne";
    Word word2 = "wordTwo";
    Word word3 = "wordThree";
@@ -73,7 +75,7 @@ int main(void){
       test ++;
       std::cout << test << std::endl;
       //update
-      word1.typedChar(paragraph);
+      
 
    }
 };
