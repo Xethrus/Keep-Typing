@@ -47,11 +47,9 @@ public:
    }
 };
 class Paragraph{
-   std::vector<Word> create_copy(std::vector<Word> const &vec)
-   {
-      std::vector<Word> v(vec.begin(), vec.end());
-      return v;
-   }
+   std::vector<Word> paragraph;
+   paragraph.push_back(Word("word1"));
+   Paragraph p(Paragraph);
 };
 
 int main(void){
