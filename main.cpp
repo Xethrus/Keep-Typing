@@ -49,6 +49,7 @@ public:
    {
       DrawText(wordToDraw.wordChars.c_str(),200,200,30,BLACK);
    }
+
 };
 class Paragraph{
 public:
@@ -56,10 +57,11 @@ public:
    Paragraph(const std::vector<Word> &listOfWords) : words{listOfWords} {};
    void printParagraph(std::vector<Word> words){
       for(auto item: words){
-         renderWord(item);
+         item.renderWord(item);
       }  
    }
 };
+
  
 int main(void){
    
@@ -81,7 +83,6 @@ int main(void){
       test ++;
       std::cout << test << std::endl;
       //update
-      
-
+      p.printParagraph(listOfWords);
    }
 };
