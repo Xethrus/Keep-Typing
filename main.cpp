@@ -45,15 +45,20 @@ public:
       
       }
    }
-   void drawWords()
+   void renderWord(Word wordToDraw)
    {
-      
+      DrawText(wordToDraw.wordChars.c_str(),200,200,30,BLACK);
    }
 };
 class Paragraph{
 public:
    std::vector<Word> words;
    Paragraph(const std::vector<Word> &listOfWords) : words{listOfWords} {};
+   void printParagraph(std::vector<Word> words){
+      for(auto item: words){
+         renderWord(item);
+      }  
+   }
 };
  
 int main(void){
