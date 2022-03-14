@@ -45,27 +45,30 @@ public:
       
       }
    }
+   void drawWords()
+   {
+      
+   }
 };
 class Paragraph{
-   std::vector<Word> paragraph;
-   paragraph.push_back(Word("word1"));
-   Paragraph p(Paragraph);
+public:
+   std::vector<Word> words;
+   Paragraph(const std::vector<Word> &listOfWords) : words{listOfWords} {};
 };
-
+ 
 int main(void){
    
    //Initialization
    //--------------------------------------------------------------------------
-   Word word1 = "wordOne";
-   Word word2 = "wordTwo";
-   Word word3 = "wordThree";
-   paragraph.push_back(word1);
-   paragraph.push_back(word2);
-   paragraph.push_back(word3);
+   std::vector<Word> listOfWords;
+   listOfWords.push_back(Word("word1"));
+   listOfWords.push_back(Word("word2"));
+   listOfWords.push_back(Word("word3"));
+   listOfWords.push_back(Word("word4"));
+   listOfWords.push_back(Word("word5"));
+   Paragraph p(listOfWords);
    InitWindow((int)SCREEN_W, (int)SCREEN_H, "testing window");
    int test = 0;
-
-
    //Main loop
    while (!WindowShouldClose())
    {
