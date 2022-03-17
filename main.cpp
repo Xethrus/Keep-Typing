@@ -45,6 +45,7 @@ public:
       
       }
    }
+   //OBJ-- Draw Individual Word
    void renderWord(Word wordToDraw)
    {
       DrawText(wordToDraw.wordChars.c_str(),200,200,30,BLACK);
@@ -55,6 +56,7 @@ class Paragraph{
 public:
    std::vector<Word> words;
    Paragraph(const std::vector<Word> &listOfWords) : words{listOfWords} {};
+   //OBJ-- Display the whole paragraph on window
    void printParagraph(std::vector<Word> words){
       for(auto item: words){
          item.renderWord(item);
@@ -77,12 +79,13 @@ int main(void){
    InitWindow((int)SCREEN_W, (int)SCREEN_H, "testing window");
    int test = 0;
    //Main loop
+   p.printParagraph(listOfWords);
    while (!WindowShouldClose())
    {
       std::this_thread::sleep_for(std::chrono::milliseconds(1000));
       test ++;
       std::cout << test << std::endl;
       //update
-      p.printParagraph(listOfWords);
+      //p.printParagraph(listOfWords);
    }
 };
